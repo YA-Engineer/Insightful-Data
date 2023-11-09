@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>R Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+                        <div class="post">
+                            <!-- Icon for the main page with a tooltip -->
+                            <a href="index.html">
+                              <i class="fa fa-home"></i>
+                              <span class="tooltiptext">HOME</span>
+                            </a>
+                       
+
+							<section class="post">
+								<header class="major">
+									<h1>Analysing Air Quality Data with R
+									</h1>
+									
+								</header>
+								<b><a href="https://github.com/YA-Engineer/Air-Quality-project-in-R/blob/main/Air%20Quality%20Project-%20YA.R" style="text-decoration: underline;"><p>View the full code in my Github profile.</p></a></b>
+								<b><p>DATASET SOURCE<br></b>
+									UCI Machine Learning Repository.<br>
+									It comprises 9358 observations of 10 sensor responses, aimed at measuring 6 different pollutants.
+								<b><p>OVERVIEW<br></b> 
+									The primary focus is on tropospheric ozone, also known as ground-level ozone. Ozone, in general, plays a dual role in the atmosphere. Stratospheric ozone protects life on Earth by absorbing harmful UV radiation, while tropospheric ozone (the central subject of this work) is a pollutant formed through chemical reactions in the lower atmosphere, associated with air quality concerns and potential health issues.
+								</p>
+								
+								<b><p>DATA CLEANING AND PREPROCESSING<br></b>
+									(1) Perform data reformatting to ensure numeric consistency. <br>
+									(2) Adjustments to the Date and Time variables to make them compatible with R. <br>
+									(3) Create two categorical features, "Day" and "Season".
+								</p>
+								<b><p>EXPLORATORY DATA ANALYSIS<br></b>
+									Upon exploring the dataset, the contamination gas levels were shown lower during the night (except for Nitrogen oxides), while not significant variations were detected across different seasons. The data also confirmed the presence of missing data in all variables, which were marked with the value -200, as specified in the UCI Repository. These missing values will need to be addressed in our data analysis and modelling.
+								<b><p>MISSING DATA<br></b>
+									A total of 16701 missing data points were identified in the dataset, marked with the value -200, with the Non-Methane Hydrocarbons (NMHC) variable had the highest number of missing entries. To address these gaps, the missing data was imputed by replacing them with the corresponding day's average value. This imputation strategy allows to maintain data consistency and continue our analysis while accounting for the missing information.
+								</p>
+								<b><p>CORRELATION<br></b>
+									Analysis of correlations was conducted, revealing significant insights into the factors influencing ozone levels. The findings indicate that ozone exhibits strong positive correlations with most gases, suggesting their potential contributions to ozone formation. 
+									<br>
+									However, there is a negative correlation with Nitrogen Oxides (NOx), a relationship influenced by various complex factors. While nitrogen oxides plays a role in the formation of ground-level ozone (O3), the interaction between NOx and ozone is complicated, and is not a straightforward one-to-one relationship. 
+									<br>
+									Understanding the nuanced dynamics between these atmospheric variables requires a detailed examination of the specific context and data sources, as various factors can influence their interactions.
+								<b><p>BUILDING THE MODEL<br></b>
+									Given the characteristics of the dataset, a Linear Regression model opted to employ. The approach involved the data partitioning into training and test sets, applying cross-validation techniques, and fine-tuning the machine learning parameters for optimisation.
+									<br>
+									The results of the model are promising, with an R-squared value of 0.9181, indicating a strong fit of the model to the data. Furthermore, when examining the visual plot of predicted values against actual values, a good fit was observed, particularly in the lower ranges of carbon monoxide levels.
+																			
+								<div class="image main" ><img src="images/1-missing data.jpg" alt="" /></div>	
+								<div class="image main" ><img src="images/2-correlation.png" alt="" /></div>
+								<div class="image main" ><img src="images/3-model.png" alt="" /></div>
+							
+
+
+							</section>
+                    </div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+						<section>
+							<h3>Email</h3>
+							<p><a href="mailto:yafandi@hotmail.com">yafandi@hotmail.com</a></p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="https://www.linkedin.com/in/yaman-afandi-ph-d-175a691a4/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/YA-Engineer" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+			<!-- Copyright -->
+				<div id="copyright">
+					<ul><li><a href="index.html"> &copy;Insightful data</li><li>Design: </a><a href="https://html5up.net">HTML5 UP</a></li></ul>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
